@@ -1,0 +1,7 @@
+para iniciar projeto: npm init dentro da pasta
+
+para instalar package e salvar nas dependencias: npm install express -save
+
+template engine EJS: npm install ejs -save
+
+nodemon para recarregar aplicação a cada arquivo editado: nodemon app.js
