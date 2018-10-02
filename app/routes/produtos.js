@@ -1,12 +1,8 @@
+var connectionFactory = require('../infra/connectionFactory');
+
 module.exports = function(app){
     app.get('/produtos', function(req,res){
-        var mysql = require('mysql');
-        var connect = mysql.createConnection({
-            host: '127.0.0.1',
-            user: 'root',
-            password: '',
-            database: 'casadocodigo'
-        });
+        var connect = connectionFactory();
 
         connect.query('select * from livros', function(err, results){
             res.render('produtos/lista', {lista: results});
