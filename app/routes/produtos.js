@@ -10,4 +10,7 @@ module.exports = function(app){
         connect.end();
     });
     
+    app.get('/produtos/form',function(req,res){
+        res.render('produtos/form');
+    });
 }
