@@ -18,20 +18,20 @@ module.exports = function(app){
     });
 
     app.get('/produtos/form',function(req,res){
-        res.render('produtos/form');
+        res.render('produtos/form', {errosValidacao:{}});
     });
 
     app.post('/produtos',function(req,res){
         var produto = req.body;
 
         //utilizando express-validator para realizar validacao dos campos
-        var validaTitulo = req.assert('titulo', 'Título é obrigatório');
-        validaTitulo.notEmpty();
+        req.assert('titulo', 'Título é obrigatório').notEmpty();
+        req.assert('preco','Formato inválido').isFloat();
 
         var erros = req.validationErrors();
 
         if(erros){
-            res.render('produtos/form');
+            res.render('produtos/form', {errosValidacao: erros});
             return;
         }
         var connect = app.infra.connectionFactory();
