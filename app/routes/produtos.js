@@ -24,6 +24,16 @@ module.exports = function(app){
     app.post('/produtos',function(req,res){
         var produto = req.body;
 
+        //utilizando express-validator para realizar validacao dos campos
+        var validaTitulo = req.assert('titulo', 'Título é obrigatório');
+        validaTitulo.notEmpty();
+
+        var erros = req.validationErrors();
+
+        if(erros){
+            res.render('produtos/form');
+            return;
+        }
         var connect = app.infra.connectionFactory();
         var produtosDAO = new app.infra.ProdutosDAO(connect);
         produtosDAO.salva(produto,function(err,result){
