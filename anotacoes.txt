@@ -5,3 +5,8 @@ para instalar package e salvar nas dependencias: npm install express -save
 template engine EJS: npm install ejs -save
 
 nodemon para recarregar aplicação a cada arquivo editado: nodemon app.js
+
+executar testes com mocha:
+node_modules/mocha/bin/mocha
+
+testes devem ficar na pasta TEST
