@@ -11,3 +11,4 @@ NODE_ENV=test node_modules/mocha/bin/mocha
 
 testes devem ficar na pasta TEST
 
+ver sobre: node-database-cleaner lib
