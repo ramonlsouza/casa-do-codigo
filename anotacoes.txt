@@ -7,6 +7,7 @@ template engine EJS: npm install ejs -save
 nodemon para recarregar aplicação a cada arquivo editado: nodemon app.js
 
 executar testes com mocha:
-node_modules/mocha/bin/mocha
+NODE_ENV=test node_modules/mocha/bin/mocha
 
 testes devem ficar na pasta TEST
+
