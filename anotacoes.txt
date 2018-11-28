@@ -19,3 +19,6 @@ heroku apps:create [nome]
 
 database heroku:
 heroku addons:create cleardb:ignite
+
+upar heroku:
+git push heroku master
