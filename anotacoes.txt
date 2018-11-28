@@ -12,3 +12,10 @@ NODE_ENV=test node_modules/mocha/bin/mocha
 testes devem ficar na pasta TEST
 
 ver sobre: node-database-cleaner lib
+
+criar app heroku:
+heroku apps:create [nome]
+(executar comando dentro da pasta do projeto, para ja adicionar no git remote)
+
+database heroku:
+heroku addons:create cleardb:ignite
